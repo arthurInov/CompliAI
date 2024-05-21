@@ -35,9 +35,9 @@ def retornaMensagem(chat: InputChat)-> ResponseChat:
     response = ResponseChat(AiMessage=ret)
     return response
 
-@app.post("/chainHistory/{sessionId}", tags=["LLMs"])
-def retornaMensagem(sessionId: int, chat: InputChat)-> ResponseChat:
-    ret = chain_with_history(chat.HumamMessage, sessionId)
+@app.post("/chainHistory/{session_id}", tags=["LLMs"])
+def retornaMensagem(session_id: int, chat: InputChat)-> ResponseChat:
+    ret = chain_with_history(chat.HumamMessage, session_id)
     response = ResponseChat(AiMessage=ret)
     return response
 
@@ -47,15 +47,15 @@ def retornaMensagem(chat: InputChat)-> ResponseChat:
     response = ResponseChat(AiMessage=ret)
     return response
 
-@app.post("/chain_retrieverHistory/{sessionId}", tags=["LLMs"])
-def retornaMensagem(sessionId: int, chat: InputChat)-> ResponseChat:
-    ret = chain_retriever_with_history(chat.HumamMessage, sessionId)
+@app.post("/chain_retrieverHistory/{session_id}", tags=["LLMs"])
+def retornaMensagem(session_id: int, chat: InputChat)-> ResponseChat:
+    ret = chain_retriever_with_history(chat.HumamMessage, session_id)
     response = ResponseChat(AiMessage=ret)
     return response
 
-@app.post("/chain_retrieverHistoryTitle/{sessionId}", tags=["LLMs"])
-def retornaMensagem(sessionId: int, chat: InputChat)-> ResponseChat:
-    ret = chain_retriever_with_history_title(chat.HumamMessage, sessionId)
+@app.post("/chain_retrieverHistoryTitle/{session_id}", tags=["LLMs"])
+def retornaMensagem(session_id: int, chat: InputChat)-> ResponseChat:
+    ret = chain_retriever_with_history_title(chat.HumamMessage, session_id)
     response = ResponseChat(AiMessage=ret)
     return response
 
